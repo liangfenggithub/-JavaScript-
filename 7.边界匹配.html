@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	边界匹配</title>
+	<script>
+		//边界匹配就是限定盘匹配条件的开头和结尾，^表示匹配开头，$表示匹配结尾
+		//假设要写一个匹配用户表单中的手机号验证规则
+		var reg = /\d{11}/;//表示11位手机号。
+		var str = "12312312333";//这个输入可以用reg匹配没问题，但是当输入变为str2时，就不行了，
+		var str2 = "我的手机号是12312312333";
+		//边界匹配解决以上问题
+		var reg2 = /^\d{11}$/;
+
+		var res = reg.test(str);
+		var res2 = reg.test(str2);
+		var res3 = reg2.test(str2);
+
+		document.write(res+ "<br>");
+		document.write(res2+ "<br>");
+		document.write(res3+ "<br>");
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

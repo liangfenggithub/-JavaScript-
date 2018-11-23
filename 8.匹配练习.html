@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	匹配练习</title>
+	<script >
+		//1. 匹配手机号
+		var reg = /^1\d{10}$/;//表示从开始到结束只有以1开头的共11位数字
+		//2. 匹配身份证号
+		var reg2 = /^\d{17}[\dxX]$/;//表示从开始到结束只有18位数字或者17位数字加上x字母
+
+		//3. qq号
+		var reg5 = /^[1-9]\d{4,10}$/;//第一位1-9，剩下4-10位数字
+
+		var str = "12345";
+		var str2 = "13365612311";
+		var str3 = "123456789123455679";
+
+		var res = reg.test(str);
+		var res2 = reg.test(str2);
+		var res3 = reg2.test(str3);
+
+		document.write(res+ "<br>");
+		document.write(res2+ "<br>");
+		document.write(res3+ "<br>");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

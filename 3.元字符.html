@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>元字符</title>
+	<script type="text/javascript">
+		//元字符 有两个 . 和 |
+		//1. . 点用来匹配除换行符外的任意内容，用于匹配单行内的任意内容。
+		var reg = /./;
+		// \ 反斜杠表示转义. 可以使用转义字符匹配真正的字符 
+		var reg2 = /\./; //匹配句号
+		var reg3 = /\//; //匹配斜线
+
+		//2. | 与逻辑或相同
+		var reg4=/违法字符|发票|海洛因|病毒|黄网|黄赌毒/;//用于检测违法字符
+		var str2 = "大量出售第三方发票，有意者联系qq1234253234";
+
+		//注意，正则比较死脑筋，没有变通性，比如：在中国贩卖宾度50g以上，就可以判处死刑。这句话是正常的，但是被也会被reg4匹配上，因此一些网站上还配合人工检测。再举个例子：小黄网上找了个对象，其中黄网也被匹配
+		//3. 匹配
+		var str = 'www.baidu.com';
+		var res = reg.test(str);
+		var res2 = reg2.test(str);
+		var res3 = reg3.test(str);
+		var res4 = reg4.test(str2);
+
+		document.write(res + "<br>");
+		document.write(res2 + "<br>");
+		document.write(res3 + "<br>");
+		if(res4){
+			document.write("<p>开门，查水表</p>")
+		}
+		document.write(res4 + "<br>");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

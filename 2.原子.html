@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原子</title>
+	<script type="text/javascript">
+		//特点：只要被匹配内容中有任何一部分是符合正则要求的，那么就是可以匹配成功的。
+		// 1.d 匹配一个数字
+		var reg = /\d/; //代表一个数字
+		var reg2 = /m\d/ //代表m字母后跟一个数字
+
+		//2. D 匹配一个非数字，与小写功能相反
+		var reg3 = /\D/;
+
+		//3. w 任意数字 字母或者下划线
+		var reg4 = /\w/;
+
+		//4. W 任意非数字非字母或者非下划线，与小写w相反
+		var reg5 = /\W/;
+
+		//5. s 任意空白字符：空格 tab 换行
+		var reg6 = /\s/;
+
+		//6. S 任意非空白字符
+		var reg7 = /\S/;
+
+		//7. 原子组合使用
+		var reg8 = /\d\d\d\w\s/;//匹配四个数字一个字符一个空白字符
+		var str2 = "1234a ";
+
+
+		var str = "www.baidu.com2018";
+		var res = reg.test(str);
+		var res2 = reg2.test(str);
+		var res3 = reg3.test(str);
+		var res4 = reg4.test(str);
+		var res5 = reg5.test(str);
+		var res6 = reg6.test(str);
+		var res7 = reg7.test(str);
+		var res8 = reg8.test(str2);
+
+		document.write(res + "<br>");
+		document.write(res2+ "<br>");
+		document.write(res3+ "<br>");
+		document.write(res4+ "<br>");
+		document.write(res5+ "<br>");
+		document.write(res6+ "<br>");
+		document.write(res7+ "<br>");
+		document.write(res8+ "<br>");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

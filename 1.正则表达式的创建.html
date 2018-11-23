@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式的创建</title>
+	<script type="text/javascript">
+		//1. 通过构造函数创建正则表达式
+		var reg = new RegExp("du");
+
+		//2. 通过字面量的方式创建正则表达式
+		var reg2 = /com/;//其中 "/" 为反斜线 
+
+		//3. 通过正则规则匹配具体数据
+		var str = "www.baidu.com";
+		var res = reg.test(str);
+		var res2 = reg2.test(str);
+		document.write(res+ "<br>");
+		document.write(res2);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

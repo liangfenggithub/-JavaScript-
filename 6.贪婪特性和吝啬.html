@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	正则表达式的贪婪特性</title>
+	<script>
+		//贪婪：正则在匹配的时候默认返回的是最长的结果 
+		//吝啬：在量词后加上问号，就表示默认返回最短的匹配结果
+		//任何量词默认是贪婪的，找最长的匹配结果，
+		//任何量词都可以加上问号，变为吝啬
+		var reg = /ld\d{3,6}/; //贪婪
+		var reg2 = /ld\d{3,6}?/; //吝啬
+		var str = "hello world12345";//被上述reg匹配到了哪个？是ld123 还是ld1234 还是ld12345？？？
+		//exec和test相同都是匹配函数，只是匹配的更加精细。
+		var res = reg.exec(str); //返回是一个数组，也就是一个对象。
+		var res2 = reg2.exec(str); 
+		console.log(res);
+		document.write("贪婪匹配中的字符是"+ res[0] + "<br>");
+		document.write("贪婪带匹配的源字符是"+ res.input+ "<br>");
+		document.write("贪婪是从源字符的第几个开始匹配到的："+ res.index + "<br>");
+		document.write("吝啬匹配中的字符是"+ res2[0] + "<br>");
+		document.write("吝啬带匹配的源字符是"+ res2.input+ "<br>");
+		document.write("吝啬是从源字符的第几个开始匹配到的："+ res2.index + "<br>");
+
+		//例如爬虫，需要匹配到下边字符串中的第一对p标签，那么就需要用到吝啬了
+		var str3 = "<p>我是第一个p标签</p><p>第二个标签</p>";
+		var reg3 = /<p>.*<\/p>/;//表示任意个(*)任意个（.）字符,
+		var reg4 = /<p>.*?<\/p>/;//在量词*后加上？就限制为吝啬，只进行最小匹配，也就是第一对标签
+		var res3  = reg3.exec(str3);
+		var res4  = reg4.exec(str3);
+		document.write("贪婪匹配中的字符是"+ res3[0] + "<br>");
+		document.write("吝啬匹配中的字符是"+ res4[0] + "<br>");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

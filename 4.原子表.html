@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原子表</title>
+	<script type="text/javascript">
+		//原子表只表示匹配一个内容比如[0-9]只要匹配到0-9之间任意一个数字就算匹配成功，其实相当于或|
+		//1. [] 原子表，只要是括号中的任意一个就匹配成功
+		var reg = /[张王李]三/;//匹配张三 王三 李三
+		var str = "张三是一个人人都会说的名字";
+
+		//2. [^] 原子表，只要不是括号中的任意一个就匹配成功
+		var reg2 = /[^张王李]三/; //不匹配张三 王三 李三
+		var str2 = "小明是一个人人都会说的名字，一般他是一个三好学生";// 个 三
+		
+		//3. [0-9] 匹配0-9的数字
+		var reg3 = /[0-9]/;//也可以是[3-6],范围自己定义
+		var str3 = "我今年27了，一事无成";
+
+		//4. [a-z] 匹配任意小写字母，同样范围可自定义，比如[a-c]或者[c-f]
+		var reg4 =/[a-z]/;
+		var str4 = "我今年很难过a";
+		
+		//5. [A-Z] 匹配任意大写字母
+		var reg5 = /[A-Z]/;
+		var str5 = "我今年很难过C";
+
+		//6. [A-Za-z] 匹配任意大小写字母
+		var reg6 = /[A-Za-z]/;
+		var str6 = "我今年很难过a";
+
+		//7. [A-Za-z0-9] 匹配任意大小写字母或者0-9数字
+		var reg7 = /[a-zA-Z0-9]/;
+		var str7 = "人生每天都是这么难，还是只是难这一阵a";
+
+		var res = reg.test(str);
+		var res2 = reg2.test(str2);
+		var res3 = reg3.test(str3);
+		var res4 = reg4.test(str4);
+		var res5 = reg5.test(str5);
+		var res6 = reg6.test(str6);
+		var res7 = reg7.test(str7);
+		document.write(res + "<br>");
+		document.write(res2 + "<br>");
+		document.write(res3 + "<br>");
+		document.write(res4 + "<br>");
+		document.write(res6 + "<br>");
+		document.write(res7 + "<br>");
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
